@@ -1,20 +1,20 @@
 class C3x < Formula
   desc "Open source cloud cost estimation for Terraform, Terragrunt, and CloudFormation"
   homepage "https://c3x.dev"
-  version "1.0.0"
+  version "1.0.1"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/c3xdev/c3x/releases/download/v#{version}/c3x-darwin-arm64.tar.gz"
-      sha256 "581d55dcdbcaede278a64b6dab4a02368de43a9639b10d6423e3688546b8045e"
+      sha256 "aab0097d82bff4a805e1939731f22a9d126559f8d0ef997dfe8e534ae2bd2144"
 
       def install
         bin.install "c3x-darwin-arm64" => "c3x"
       end
     else
       url "https://github.com/c3xdev/c3x/releases/download/v#{version}/c3x-darwin-amd64.tar.gz"
-      sha256 "eb92dd23e110089763c1e5fbc8da432af35275eb94f508b288aedc8142a34136"
+      sha256 "a61ada2f136de8864da1a948cc7933f2b25f4352440289348262b849859da362"
 
       def install
         bin.install "c3x-darwin-amd64" => "c3x"
@@ -25,14 +25,14 @@ class C3x < Formula
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/c3xdev/c3x/releases/download/v#{version}/c3x-linux-arm64.tar.gz"
-      sha256 "5f71afd61f1e298dbe338e5108bc4165a4e60eb3b8fa6d637dc406172705ff42"
+      sha256 "13febf8ccb79529d4602ef139ffaad09051ad541068a8a1429e6094ee4610fbd"
 
       def install
         bin.install "c3x-linux-arm64" => "c3x"
       end
     else
       url "https://github.com/c3xdev/c3x/releases/download/v#{version}/c3x-linux-amd64.tar.gz"
-      sha256 "7b3c344ed651ea02efe4721c38a9028f2de9c0f0ea92e12b5a8cb38aaa4894df"
+      sha256 "15a696567b743c5990f21bde405b7b850dfcdf5d69f64bc93b7eaa3ae4820edc"
 
       def install
         bin.install "c3x-linux-amd64" => "c3x"
