@@ -24,14 +24,20 @@ cask "c3x" do
   end
 
   name "c3x"
-  desc "Cloud cost estimation for Terraform & CloudFormation. No API key, no SaaS."
-  homepage "https://c3x.dev"
+  desc "Cloud cost estimation for Terraform, OpenTofu and CloudFormation"
+  homepage "https://c3x.dev/"
 
   livecheck do
     skip "Auto-generated on release."
   end
 
   binary "c3x"
+
+  postflight_steps do
+    on_macos do
+      run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "c3x"], chdir: ".", writable_paths: ["c3x"]
+    end
+  end
 
   # No zap stanza required
 end
